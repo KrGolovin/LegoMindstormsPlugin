@@ -4,7 +4,7 @@ class GraphImpl() : Graph {
 
     override fun addEdge(from: Int, to: Int) {
         nodeArray[from].setOfEdge.add(to)
-        nodeArray[from].isStart = false
+        nodeArray[to].isStart = false
         nodeArray[to].inPower += 1
     }
 
@@ -14,7 +14,7 @@ class GraphImpl() : Graph {
         val inPowerValues = Array(size) {
             nodeArray[it].inPower
         }
-        for (i in 0..size) {
+        for (i in 0 until size) {
             if (nodeArray[i].isStart) {
                 dfs(i, resultList, isVisited, inPowerValues)
             }
@@ -40,7 +40,7 @@ class GraphImpl() : Graph {
         }
     }
 
-    private val nodeArray: Array<Node> = Array(Companion.size) {
+    private val nodeArray: Array<Node> = Array(size) {
         Node(true, 0, mutableSetOf())
     }
 
@@ -51,7 +51,7 @@ class GraphImpl() : Graph {
     )
 
     companion object {
-        private const val size = 26
+        const val size = 26
     }
 
 }

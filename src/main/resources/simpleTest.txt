@@ -1,4 +1,7 @@
-3
-dba%0
-ca%1
-abc%2
+6
+kirill%0
+katya%1
+fedya%2
+dima%5
+nikita%3
+tema%4
